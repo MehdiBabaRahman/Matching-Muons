@@ -141,6 +141,9 @@ int Matching_muons_v1(){
             n = ( (selMu3_eta - genMu1_eta) * (selMu3_eta - genMu1_eta) ) +  ( (selMu3_phi - genMu1_phi) * (selMu3_phi - genMu1_phi) ) ;
             o = ( (selMu3_eta - genMu2_eta) * (selMu3_eta - genMu2_eta) ) +  ( (selMu3_phi - genMu2_phi) * (selMu3_phi - genMu2_phi) ) ;
             p = ( (selMu3_eta - genMu3_eta) * (selMu3_eta - genMu3_eta) ) +  ( (selMu3_phi - genMu3_phi) * (selMu3_phi - genMu3_phi) ) ;
+            min= std::min(std::min(std::min(std::min(std::min(std::min(std::min(std::min(std::min(std::min(std::min(std::min(std::min(a,b), c),d),e),f),g),h),k),l),m),n),o),p) ;
+          //  cout << "minimum dR =  "<< sqrt(min) << endl;
+            sD_Lxy->Fill(sqrt(min)); 
 
             }
             else {counter1 = counter1+1;}
@@ -170,9 +173,7 @@ int Matching_muons_v1(){
 
 
 
-            min= std::min(std::min(std::min(std::min(std::min(std::min(std::min(std::min(std::min(std::min(std::min(std::min(std::min(a,b), c),d),e),f),g),h),k),l),m),n),o),p) ;
-            cout << "minimum dR =  "<< sqrt(min) << endl;
-            sD_Lxy->Fill(sqrt(min)); 
+  
 
 
      }    
