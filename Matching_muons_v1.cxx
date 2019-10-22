@@ -124,20 +124,20 @@ int Matching_muons_v1(){
             min1= min(min(min(a,b), c),d);
           
             if (    
-            selMu0_eta != -100 &&
-            genMu0_eta != -100 && 
+            abs(selMu0_eta) <= 2.4 && 
+            abs(genMu0_eta) <= 2.4 && 
             selMu0_phi != -100 &&
             genMu0_phi != -100 &&
             
-            genMu1_eta != -100 &&
+            abs(genMu1_eta) <= 2.4 &&
             genMu1_phi != -100 &&
 
             
-            genMu2_eta != -100 &&
+            abs(genMu2_eta) <= 2.4 &&
             genMu2_phi != -100 &&
 
             
-            genMu3_eta != -100 &&   
+            abs(genMu3_eta) <= 2.4 &&   
             genMu3_phi != -100 ){
 
             
@@ -156,19 +156,19 @@ int Matching_muons_v1(){
     
             if (    
           
-            genMu0_eta != -100 && 
+            abs(genMu0_eta) <= 2.4 && 
             genMu0_phi != -100 &&
 
-            selMu1_eta != -100 &&
-            genMu1_eta != -100 &&
+            abs(selMu1_eta) <= 2.4 &&
+            abs(genMu1_eta) <= 2.4 &&
             selMu1_phi != -100 &&
             genMu1_phi != -100 &&
 
  
-            genMu2_eta != -100 &&
+            abs(genMu2_eta) <= 2.4 &&
             genMu2_phi != -100 &&
 
-            genMu3_eta != -100 &&
+            abs(genMu3_eta) <= 2.4 &&
             genMu3_phi != -100 ){
 
             
@@ -191,19 +191,19 @@ int Matching_muons_v1(){
 
             if (    
 
-            genMu0_eta != -100 && 
+            abs(genMu0_eta) <= 2.4 && 
             genMu0_phi != -100 &&
 
     
-            genMu1_eta != -100 &&
+            abs(genMu1_eta) <= 2.4 &&
             genMu1_phi != -100 &&
 
-            selMu2_eta != -100 &&
-            genMu2_eta != -100 &&
+            abs(selMu2_eta) <= 2.4 &&
+            abs(genMu2_eta) <= 2.4 &&
             selMu2_phi != -100 &&
             genMu2_phi != -100 &&
     
-            genMu3_eta != -100 &&  
+            abs(genMu3_eta) <= 2.4 &&  
             genMu3_phi != -100 ){
 
             
@@ -230,19 +230,19 @@ int Matching_muons_v1(){
 
             if (    
 
-            genMu0_eta != -100 && 
+            abs(genMu0_eta) <= 2.4 && 
             genMu0_phi != -100 &&
 
 
-            genMu1_eta != -100 &&
+            abs(genMu1_eta) <= 2.4 &&
             genMu1_phi != -100 &&
 
   
-            genMu2_eta != -100 &&
+            abs(genMu2_eta) <= 2.4 &&
             genMu2_phi != -100 &&
 
-            selMu3_eta != -100 &&
-            genMu3_eta != -100 &&
+            abs(selMu3_eta) <= 2.4 &&
+            abs(genMu3_eta) <= 2.4 &&
             selMu3_phi != -100 &&
             genMu3_phi != -100 ){
 
