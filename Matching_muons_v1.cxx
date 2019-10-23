@@ -30,7 +30,9 @@
 
 using namespace std;
 
-int Matching_muons_v1(){    
+int Matching_muons_v1(){   
+    
+
 
     Float_t selMu0_eta;
    // Float_t genMu0_eta;
@@ -52,16 +54,56 @@ int Matching_muons_v1(){
     Float_t selMu3_phi;
     Float_t genMu3_phi;
 
+   
 
+
+
+    Int_t counter1;
+    counter1 = 0;
+    Int_t counter2;
+    counter2 =0;
+    Int_t counter3;
+    counter3 =0;
+    Int_t counter4;
+    counter4 = 0;
+    Int_t counter5;
+    counter5 = 0;   
+
+    Int_t counter6;
+    counter6 = 0; 
+    Int_t counter7;
+    counter7 = 0; 
+    Int_t counter8;
+    counter8 = 0; 
+    Int_t counter9;
+    counter9 = 0; 
+    Int_t counter10;
+    counter10 = 0;
+    Int_t counter11;
+    counter11 = 0; 
+    Int_t counter12;
+    counter12 = 0; 
+    Int_t counter13;
+    counter13 = 0; 
+    Int_t counter14;
+    counter14 = 0; 
+    Int_t counter15;
+    counter15 = 0; 
+    Int_t counter16;
+    counter16 = 0; 
+    Int_t counter17;
+    counter17 = 0; 
+    Int_t counter18;
+    counter18 = 0; 
+    Int_t counter19;
+    counter19 = 0;
+    Int_t counter20;
+    counter20 = 0;
 
 
 
     TFile *myFile = new TFile("ALL.root");
 
-    
-    
-    
-    
     TCanvas *cnv1 = new TCanvas();
     TH1F *sD_Lxy1 = new TH1F("dR1", "dR1", 100, -1E-4, 5E-2);
 
@@ -92,9 +134,10 @@ int Matching_muons_v1(){
     int N = myTree1->GetEntries();
     cout << "Number of entries: " << N << endl;
 
-
+   
     Float_t genMu0_eta;
-    Int_t counter0, counter1 = 0 ;
+
+
 
     myTree1->SetBranchAddress("genMu0_eta", &genMu0_eta);
     myTree1->SetBranchAddress("selMu0_eta", &selMu0_eta);
@@ -115,7 +158,8 @@ int Matching_muons_v1(){
     myTree1->SetBranchAddress("selMu3_phi", &selMu3_phi);
 
 
-    for(int ii; ii < N; ii++){
+
+    for(int ii = 0; ii < N; ii++){
 
 
             myTree1->GetEntry(ii);
@@ -148,8 +192,33 @@ int Matching_muons_v1(){
             d = ( (selMu0_eta - genMu3_eta) * (selMu0_eta - genMu3_eta) ) +  ( (selMu0_phi - genMu3_phi) * (selMu0_phi - genMu3_phi) ) ;
             
             
-            sD_Lxy1->Fill(sqrt(min1));   
+            sD_Lxy1->Fill(sqrt(min1));
+
             }
+
+            if ( min1 == a) {
+            counter1 = counter1+1;
+            }
+
+            if (min1 == b) {
+            counter2 = counter2+1;
+            }
+
+            if (min1 == c) {
+            counter3 = counter3+1;
+            
+            }
+
+            if (min1 == d) {
+            counter4 = counter4+1;
+            
+            }
+
+            else if ( min1 != a && min1 != b && min1 != c && min1 != d) { 
+            counter5 = counter5+1;
+            }
+
+
 
             Float_t e, f, g, h, min2;
             min2 = std::min(std::min(std::min(e,f), g),h);
@@ -180,8 +249,30 @@ int Matching_muons_v1(){
             sD_Lxy2->Fill(sqrt(min2)); 
             
             }
+
+
             
+            if ( min2 == e) {
+            counter6 = counter6+1;
+            }
+
+            if (min2 == f) {
+            counter7 = counter7+1;
+            }
+
+            if (min2 == g) {
+            counter8 = counter8+1;
             
+            }
+
+            if (min2 == h) {
+            counter9 = counter9+1;
+            
+            }
+
+            else if ( min2 != e && min2 != f && min2 != g && min2 != h) { 
+            counter10 = counter10+1;
+            }            
             
             
 
@@ -215,11 +306,32 @@ int Matching_muons_v1(){
             i = ( (selMu2_eta - genMu0_eta) * (selMu2_eta - genMu0_eta) ) +  ( (selMu2_phi - genMu0_phi) * (selMu2_phi - genMu0_phi) ) ;
             j = ( (selMu2_eta - genMu1_eta) * (selMu2_eta - genMu1_eta) ) +  ( (selMu2_phi - genMu1_phi) * (selMu2_phi - genMu1_phi) ) ;
             k = ( (selMu2_eta - genMu2_eta) * (selMu2_eta - genMu2_eta) ) +  ( (selMu2_phi - genMu2_phi) * (selMu2_phi - genMu2_phi) ) ;
-            l = ( (selMu2_eta - genMu2_eta) * (selMu2_eta - genMu2_eta) ) +  ( (selMu2_phi - genMu2_phi) * (selMu2_phi - genMu2_phi) ) ;
+            l = ( (selMu2_eta - genMu3_eta) * (selMu2_eta - genMu3_eta) ) +  ( (selMu2_phi - genMu3_phi) * (selMu2_phi - genMu3_phi) ) ;
             sD_Lxy3->Fill(sqrt(min3));
             }
             
+            if ( min3 == i) {
+            counter11 = counter11+1;
+            }
+
+            if (min3 == j) {
+            counter12 = counter12+1;
+            }
+
+            if (min3 == k) {
+            counter13 = counter13+1;
             
+            }
+
+            if (min3 == l) {
+            counter14 = counter14+1;
+            
+            }
+
+            else if ( min3 != i && min3 != j && min3 != k && min3 != l) { 
+            counter15 = counter15+1;
+            }            
+                        
             
 
 
@@ -257,17 +369,62 @@ int Matching_muons_v1(){
             sD_Lxy4->Fill(sqrt(min4));
             }
 
+            if ( min4 == m) {
+            counter16 = counter16+1;
+            }
+
+            if (min4 == n) {
+            counter17 = counter17+1;
+            }
+
+            if (min4 == o) {
+            counter18 = counter18+1;
+            
+            }
+
+            if (min4 == p) {
+            counter19 = counter19+1;
+            
+            }
+
+            else if ( min4 != m && min4 != n && min4 != o && min4 != p) { 
+            counter20 = counter20+1;
+            }            
             
             
-           
+            
 
     
             
-         //   else {counter1 = counter1+1;}
              
     }
 
-    cout << "not matched = " << counter1 << endl;
+    cout << "leading sel muon matched to leading gen moun:  " << counter1 << endl;
+    cout << "leading sel muon matched to sub-leading gen moun:  " << counter2 << endl;
+    cout << "leading sel muon matched to 3rd gen moun:  " << counter3 << endl;
+    cout << "leading sel muon matched to 4th gen moun:  " << counter4 << endl;
+    cout << "leading sel moun not matched: " << counter5 << endl;
+
+    cout << "sub-leading sel muon matched to leading gen moun:  " << counter6 << endl;
+    cout << "sub-leading sel muon matched to sub-leading gen moun:  " << counter7 << endl;
+    cout << "sub-leading sel muon matched to 3rd gen moun:  " << counter8 << endl;
+    cout << "sub-leading sel muon matched to 4th gen moun:  " << counter9 << endl;
+    cout << "sub-leading sel moun not matched: " << counter10 << endl;
+
+
+    cout << "3rd sel muon matched to leading gen moun:  " << counter11 << endl;
+    cout << "3rd sel muon matched to sub-leading gen moun:  " << counter12 << endl;
+    cout << "3rd sel muon matched to 3rd gen moun:  " << counter13 << endl;
+    cout << "3rd sel muon matched to 4th gen moun:  " << counter14 << endl;
+    cout << "3rd sel moun not matched: " << counter15 << endl;
+
+
+    cout << "4th sel muon matched to leading gen moun:  " << counter16 << endl;
+    cout << "4th sel muon matched to sub-leading gen moun:  " << counter17 << endl;
+    cout << "4th sel muon matched to 3rd gen moun:  " << counter18 << endl;
+    cout << "4th sel muon matched to 4th gen moun:  " << counter19 << endl;
+    cout << "4th sel moun not matched: " << counter20 << endl;
+
     cnv1->cd();   
     sD_Lxy1->Draw();
     cnv2->cd();
@@ -293,3 +450,38 @@ int Matching_muons_v1(){
 
 
 }
+
+
+
+            // if (min1 == a) {
+            // counter1 = counter1+1;
+            // }
+
+            // if (min1 == b) {
+            // counter2 = counter2+1;
+            // }
+
+            // if (min1 == c) {
+            // counter3 = counter3+1;
+            
+            // }
+
+            // if (min1 == d) {
+            // counter4 = counter4+1;
+            
+            // }
+
+            // else {
+            // counter5 = counter5+1;
+            // }
+
+
+
+    // cout << "leading sel muon matched to leading gen moun:  " << counter1 << endl;
+    // cout << "leading sel muon matched to sub-leading gen moun:  " << counter2 << endl;
+    // cout << "leading sel muon matched to 3rd gen moun:  " << counter3 << endl;
+    // cout << "leading sel muon matched to 4th gen moun:  " << counter4 << endl;
+    // cout << "leading sel moun not matched: " << counter5 << endl;
+
+    // cout << "total not matched:" << counter6 << endl;
+
